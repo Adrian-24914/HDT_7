@@ -1,3 +1,5 @@
+//Clase producto con gets 
+
 public class Producto {
     private String sku;
     private double price_Retail;
