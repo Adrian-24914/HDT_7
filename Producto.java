@@ -53,19 +53,31 @@ public class Producto implements Comparable<Producto> {
         this.category = category;
     }
 
+    // Comparación basada solo en el SKU
     @Override
-    public int compareTo(Producto other) {
-        return this.sku.compareTo(other.sku); // Compara por SKU
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Producto producto = (Producto) obj;
+        return sku.equals(producto.sku); // Solo compara el SKU
     }
 
     @Override
+    public int hashCode() {
+        return sku.hashCode(); // Se usa solo el SKU para el hashCode
+    }
+
+    @Override
+    public int compareTo(Producto other) {
+        return this.sku.compareTo(other.sku); // Compara solo por SKU
+    }
+
+    // Imprimir información de forma ordenada
+    @Override
     public String toString() {
-        return "Producto{" +
-                "sku='" + sku + '\'' +
-                ", priceRetail=" + priceRetail +
-                ", priceCurrent=" + priceCurrent +
-                ", productName='" + productName + '\'' +
-                ", category='" + category + '\'' +
-                '}';
+        return String.format(
+            "\n=== Producto ===\nSKU: %s\nNombre: %s\nCategoría: %s\nPrecio Retail: $%.2f\nPrecio Actual: $%.2f",
+            sku, productName, category, priceRetail, priceCurrent
+        );
     }
 }
