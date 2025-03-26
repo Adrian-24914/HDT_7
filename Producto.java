@@ -37,7 +37,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "SKU: " + sku + ", Product: " + product_Name + ", Category: " + category +
-               ", Retail Price: $" + price_Retail + ", Current Price: $" + price_Current;
+        return "SKU: " + sku + ", Producto: " + product_Name + ", Categoria: " + category +
+               ", Precio Minorista: $" + price_Retail + ", Precio Actual: $" + price_Current;
     }
 }
