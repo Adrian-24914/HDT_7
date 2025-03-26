@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-
 public class Manager_Producto {
     private BinarySearchTree<Producto> bst = new BinarySearchTree<>();
 
